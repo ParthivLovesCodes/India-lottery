@@ -14,6 +14,9 @@ const AdminSettings = () => {
   const [ticketName1, setTicketName1] = useState("");
   const [ticketName2, setTicketName2] = useState("");
   const [ticketName3, setTicketName3] = useState("");
+  const [ticketName4, setTicketName4] = useState("");
+  const [ticketName5, setTicketName5] = useState("");
+  const [ticketName6, setTicketName6] = useState("");
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -27,6 +30,9 @@ const AdminSettings = () => {
           setTicketName1(result.data.ticketName1);
           setTicketName2(result.data.ticketName2);
           setTicketName3(result.data.ticketName3);
+          setTicketName4(result.data.ticketName4);
+          setTicketName5(result.data.ticketName5);
+          setTicketName6(result.data.ticketName6);
         } else {
           toast.error("Something Went Wrong !");
           console.error(result.error);
@@ -45,6 +51,9 @@ const AdminSettings = () => {
     const tickName1 = ticketName1.trim();
     const tickName2 = ticketName2.trim();
     const tickName3 = ticketName3.trim();
+    const tickName4 = ticketName4.trim();
+    const tickName5 = ticketName5.trim();
+    const tickName6 = ticketName6.trim();
     if (phNumber.length !== 10) {
       toast.error("Please Enter Valid Number!");
       return;
@@ -52,7 +61,10 @@ const AdminSettings = () => {
     if (
       tickName1.length === 0 ||
       tickName2.length === 0 ||
-      tickName3.length === 0
+      tickName3.length === 0 ||
+      tickName4.length === 0 ||
+      tickName5.length === 0 ||
+      tickName6.length === 0
     ) {
       toast.error("Please Enter Ticket Types!");
       return;
@@ -63,7 +75,10 @@ const AdminSettings = () => {
         phoneNumber: phNumber,
         ticketName1: tickName1,
         ticketName2: tickName2,
-        ticketName3: tickName3,
+        ticketName3: tickName3, 
+        ticketName4: tickName4,
+        ticketName5: tickName5,
+        ticketName6: tickName6,
       });
       toast.success("Settings Updated Succesfully!");
     } catch (error) {
@@ -111,6 +126,27 @@ const AdminSettings = () => {
                 <Input
                   value={ticketName3}
                   onChange={(e) => setTicketName3(e.target.value)}
+                />
+              </div>
+              <div className="field-container">
+                <span className="field-title">Ticket Type 4</span>
+                <Input
+                  value={ticketName4}
+                  onChange={(e) => setTicketName4(e.target.value)}
+                />
+              </div>
+              <div className="field-container">
+                <span className="field-title">Ticket Type 5</span>
+                <Input
+                  value={ticketName5}
+                  onChange={(e) => setTicketName5(e.target.value)}
+                />
+              </div>
+              <div className="field-container">
+                <span className="field-title">Ticket Type 6</span>
+                <Input
+                  value={ticketName6}
+                  onChange={(e) => setTicketName6(e.target.value)}
                 />
               </div>
             </div>

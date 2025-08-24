@@ -48,7 +48,7 @@ export const scheduledFunction = functions.pubsub
         );
         const docData = firstDoc.data();
         if (docData && docData.declared === false) {
-          const randomNumbers = Array.from({ length: 3 }, () =>
+          const randomNumbers = Array.from({ length: 6 }, () =>
             Math.floor(Math.random() * 100)
           );
 
@@ -56,6 +56,9 @@ export const scheduledFunction = functions.pubsub
             "1_": randomNumbers[0].toString().padStart(2, "0"),
             "2_": randomNumbers[1].toString().padStart(2, "0"),
             "3_": randomNumbers[2].toString().padStart(2, "0"),
+            "4_": randomNumbers[3].toString().padStart(2, "0"),
+            "5_": randomNumbers[4].toString().padStart(2, "0"),
+            "6_": randomNumbers[5].toString().padStart(2, "0"),
             declared: true,
           };
 
@@ -118,6 +121,9 @@ const createDayDoc = async (dayId) => {
           "1_": "00",
           "2_": "00",
           "3_": "00",
+          "4_": "00",
+          "5_": "00",
+          "6_": "00",
           createdAt: Timestamp.now(),
         };
 

@@ -16,6 +16,9 @@ const AdminEditRow = () => {
   const [col1, setCol1] = useState("");
   const [col2, setCol2] = useState("");
   const [col3, setCol3] = useState("");
+  const [col4, setCol4] = useState("");
+  const [col5, setCol5] = useState("");
+  const [col6, setCol6] = useState("");
   const [declared, setDeclared] = useState(false);
   const [time, setTime] = useState(null);
 
@@ -35,6 +38,9 @@ const AdminEditRow = () => {
           setCol1(data["1_"]);
           setCol2(data["2_"]);
           setCol3(data["3_"]);
+          setCol4(data["4_"]);
+          setCol5(data["5_"]);
+          setCol6(data["6_"]);
           setDeclared(data["declared"]);
           setTime(data["time"]);
         }
@@ -53,7 +59,7 @@ const AdminEditRow = () => {
   }, [date, timeId]);
 
   const handleSubmit = async () => {
-    if (col1 === "" || col2 === "" || col3 === "") {
+    if (col1 === "" || col2 === "" || col3 === "" || col4 === "" || col5 === "" || col6 === "") {
       toast.error("Please Enter Valid Numbers !");
       return;
     }
@@ -63,6 +69,9 @@ const AdminEditRow = () => {
         "1_": col1,
         "2_": col2,
         "3_": col3,
+        "4_": col4,
+        "5_": col5,
+        "6_": col6,
         declared: declared,
       });
       toast.success("Updated SuccessFully !");
@@ -128,6 +137,33 @@ const AdminEditRow = () => {
                   maxLength={2}
                   value={col3}
                   onChange={(e) => setCol3(e.target.value)}
+                  style={{ width: "100%" }}
+                />
+              </div>
+              <div className="field-container">
+                <span className="field-title">MP Deluxe</span>
+                <Input
+                  maxLength={2}
+                  value={col4}
+                  onChange={(e) => setCol4(e.target.value)}
+                  style={{ width: "100%" }}
+                />
+              </div>
+              <div className="field-container">
+                <span className="field-title">Bhagya Rekha</span>
+                <Input
+                  maxLength={2}
+                  value={col5}
+                  onChange={(e) => setCol5(e.target.value)}
+                  style={{ width: "100%" }}
+                />
+              </div>
+              <div className="field-container">
+                <span className="field-title">Diamond</span>
+                <Input
+                  maxLength={2}
+                  value={col6}
+                  onChange={(e) => setCol6(e.target.value)}
                   style={{ width: "100%" }}
                 />
               </div>

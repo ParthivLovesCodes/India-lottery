@@ -54,6 +54,9 @@ export const DataProvider = ({ children }) => {
             "1_": "00",
             "2_": "00",
             "3_": "00",
+            "4_": "00",
+            "5_": "00",
+            "6_": "00",
             createdAt: Timestamp.now(),
           };
 

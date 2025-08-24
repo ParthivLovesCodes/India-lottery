@@ -24,6 +24,9 @@ const AdminPage = () => {
   const [ticketName1, setTicketName1] = useState("");
   const [ticketName2, setTicketName2] = useState("");
   const [ticketName3, setTicketName3] = useState("");
+  const [ticketName4, setTicketName4] = useState("");
+  const [ticketName5, setTicketName5] = useState("");
+  const [ticketName6, setTicketName6] = useState("");
   const [results, setResults] = useState([]);
   const [newNeeded, setNewNeeded] = useState(false);
 
@@ -38,6 +41,9 @@ const AdminPage = () => {
           setTicketName1(result.data.ticketName1);
           setTicketName2(result.data.ticketName2);
           setTicketName3(result.data.ticketName3);
+          setTicketName4(result.data.ticketName4);
+          setTicketName5(result.data.ticketName5);
+          setTicketName6(result.data.ticketName6);
         } else {
           toast.error("Something Went Wrong !");
           console.error(result.error);
@@ -149,6 +155,9 @@ const AdminPage = () => {
                 ticketName1={ticketName1}
                 ticketName2={ticketName2}
                 ticketName3={ticketName3}
+                ticketName4={ticketName4}
+                ticketName5={ticketName5}
+                ticketName6={ticketName6}
               />
             )}
           </div>

@@ -1,7 +1,7 @@
 .table-body {
   width: 100%;
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+  grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
   justify-content: space-between;
   width: fit-content;
   color: #000;
@@ -17,14 +17,14 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
     &:last-child {
       border: none;
     }
   }
   span.draw-time {
-    font-size: 16px;
+    font-size: 14px;
     text-transform: none;
   }
   span.green {
@@ -39,13 +39,13 @@
 
 @media screen and (max-width: 768px) {
   .table-body {
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
     span,
     span.blue-link-text {
-      font-size: 8px;
+      font-size: 7px;
     }
     span.draw-time {
-      font-size: 8px;
+      font-size: 7px;
     }
   }
 }
