@@ -5,6 +5,8 @@ import {
   AdminEditRow,
   AdminPage,
   AdminSettings,
+  DefaultPage,
+  DrawPage,
   ForgotPassword,
   HomePage,
   LoginPage,
@@ -27,7 +29,17 @@ function App() {
               <Route
                 exact
                 path="/"
+                element={<DefaultPage />}
+              />
+              <Route
+                exact
+                path="/result"
                 element={<HomePage />}
+              />
+              <Route
+                exact
+                path="/draw"
+                element={<DrawPage />}
               />
               <Route
                 exact

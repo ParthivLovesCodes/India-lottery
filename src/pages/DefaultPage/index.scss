@@ -1,0 +1,351 @@
+.default-page {
+  background: #e5a802;
+  background: radial-gradient(
+    circle,
+    rgba(229, 168, 2, 1) 36%,
+    rgba(152, 111, 1, 1) 100%
+  );
+  min-height: 100vh;
+
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .lottery-header {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  .time-container {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: #5605c1;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+
+  /* News Ticker Banner */
+  .news-ticker {
+    border-radius: 8px;
+    padding-top: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ticker-content {
+    color: #f2ed58;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+    display: inline-block;
+  }
+
+  @keyframes ticker {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Time Panels */
+  .time-panels {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: auto;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+
+  .time-panel {
+    width: 200px;
+    background: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
+  }
+  .yellow {
+    background: #f0e30b;
+  }
+  .green {
+    background: #31f00b;
+  }
+  .pink {
+    background: #f00bdd;
+  }
+  .red {
+    background: #f0460b;
+  }
+
+  .panel-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+  }
+
+  .panel-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    font-family: "Courier New", monospace;
+  }
+
+  // table
+
+  .ticket-table {
+    border: 1px solid #fff;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .table-header {
+    color: #fff;
+    background: #ff0000;
+    padding: 5px 0;
+    text-align: center;
+    font-weight: 500;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 3fr 3fr;
+    border-bottom: 2px solid #e5a802;
+    .left-b {
+      border-left: 2px solid #e5a802;
+    }
+  }
+
+  .table-row {
+    background: #c5143a;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr 3fr 3fr;
+    align-items: center;
+    border-bottom: 1px solid #e5a802;
+    .name {
+      padding: 5px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      .topp {
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .bottom {
+        font-weight: 600;
+      }
+    }
+    input {
+      max-width: 25px;
+      border-radius: 5px;
+      margin: 0 auto;
+      border-width: 0.5px;
+      text-align: center;
+    }
+    input.large-input {
+      max-width: 70px;
+    }
+    .left-b {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 2px solid #e5a802;
+    }
+    .res {
+      background: #f2ed58;
+      height: 100%;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .green {
+    background: #85c335;
+  }
+  .blue {
+    background: #1e60ac;
+  }
+  .orange {
+    background: #fc9f35;
+  }
+  .brown {
+    background: #a73b13;
+  }
+  .pink {
+    background: #ff00f8;
+  }
+
+  .login-row {
+    display: flex;
+    background: #5605c1;
+    padding: 8px 15px;
+    justify-content: space-around;
+    span {
+      color: #fff;
+      font-size: 18px;
+    }
+    .loginn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    input {
+      border-radius: 5px;
+    }
+    .button input {
+      border-radius: 0;
+      padding: 2px 15px;
+    }
+    .loginn.total {
+      margin-left: 30px;
+    }
+    .total input {
+      width: 50px;
+      text-align: center;
+    }
+  }
+  .button-row {
+    background: #20276d;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    .big-button input {
+      color: #000;
+      font-size: 22px;
+      font-weight: bold;
+      background: #faa70b;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .img-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+  .imp-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    span {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .default-page {
+    padding: 15px;
+    .ticker-content {
+      font-size: 18px;
+    }
+    .time-panel {
+      width: auto;
+      padding: 2px 5px;
+    }
+    .panel-label {
+      font-size: 8px;
+    }
+    .panel-value {
+      font-size: 10px;
+    }
+    .table-header {
+      font-size: 8px;
+      .left-b {
+        border-width: 1px;
+      }
+    }
+    .table-row {
+      font-size: 8px;
+      .name {
+        .topp {
+          font-size: 10px;
+        }
+        .bottom {
+          font-size: 8px;
+        }
+      }
+      input {
+        max-width: 4px;
+        height: 8px;
+      }
+      input.large-input {
+        max-width: 10px;
+        font-size: 6px;
+      }
+      .left-b {
+        border-width: 1px;
+      }
+      .res {
+        font-size: 10px;
+      }
+    }
+    .login-row {
+      span {
+        font-size: 8px;
+      }
+      input {
+        border-radius: 5px;
+        width: 20px;
+        height: 10px;
+      }
+      .button input {
+        width: auto;
+        border-radius: 0;
+        padding: 2px 5px;
+        font-size: 8px;
+        height: 20px;
+      }
+      .loginn.total {
+        margin-left: 10px;
+      }
+      .total input {
+        width: 10px;
+        font-size: 8px;
+      }
+    }
+    .imp-text {
+      font-size: 12px;
+    }
+    .button-row {
+      gap: 5px;
+      align-items: center;
+      padding: 10px 0;
+      .big-button {
+        display: flex;
+        align-items: center;
+      }
+      .big-button input {
+        color: #000;
+        font-size: 6px;
+        font-weight: bold;
+        background: #faa70b;
+        border-radius: 5px;
+        padding: 2px 5px;
+        cursor: pointer;
+      }
+      .img-container {
+        img {
+          width: 60px;
+        }
+      }
+    }
+  }
+}

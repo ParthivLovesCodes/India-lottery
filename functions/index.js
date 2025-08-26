@@ -64,6 +64,14 @@ export const scheduledFunction = functions.pubsub
 
           await firstDoc.ref.update(updateData);
           console.log(`Document updated with:`, updateData);
+          // After updating the result, update masterSettings/masterSettings with lastDrawnDate and lastDrawnId
+          const masterSettingsRef = db
+            .collection("masterSettings")
+            .doc("masterSettings");
+          await masterSettingsRef.update({
+            lastDrawnDate: formattedDate,
+            lastDrawnId: firstDoc.id,
+          });
         } else if (docData && docData.declared !== undefined) {
           console.log(
             "The property `declared` is not false. It is:",

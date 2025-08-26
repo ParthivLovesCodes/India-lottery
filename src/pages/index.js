@@ -4,3 +4,5 @@ export { default as ForgotPassword } from "./ForgotPassword";
 export { default as AdminPage } from "./AdminPage";
 export { default as AdminEditRow } from "./AdminEditRow";
 export { default as AdminSettings } from "./AdminSettings";
+export { default as DefaultPage } from "./DefaultPage";
+export { default as DrawPage } from "./DrawPage";
