@@ -23,7 +23,8 @@ const AdminEditRow = () => {
   const [time, setTime] = useState(null);
 
   const navigate = useNavigate();
-  const { getResultByDateTime, updateResultByDateTime } = useData();
+  const { getResultByDateTime, updateResultByDateTime, updateSettingsById } =
+    useData();
   const { showLoading, hideLoading } = useLoading();
 
   useEffect(() => {
@@ -59,7 +60,14 @@ const AdminEditRow = () => {
   }, [date, timeId]);
 
   const handleSubmit = async () => {
-    if (col1 === "" || col2 === "" || col3 === "" || col4 === "" || col5 === "" || col6 === "") {
+    if (
+      col1 === "" ||
+      col2 === "" ||
+      col3 === "" ||
+      col4 === "" ||
+      col5 === "" ||
+      col6 === ""
+    ) {
       toast.error("Please Enter Valid Numbers !");
       return;
     }
@@ -73,6 +81,10 @@ const AdminEditRow = () => {
         "5_": col5,
         "6_": col6,
         declared: declared,
+      });
+      const data = await updateSettingsById("masterSettings", {
+        lastDrawnDate: date,
+        lastDrawnId: timeId,
       });
       toast.success("Updated SuccessFully !");
       navigate(`/admin/${date}`);
