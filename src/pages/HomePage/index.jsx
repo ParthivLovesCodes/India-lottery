@@ -81,19 +81,21 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <Helmet>
-        <title>Play India Lottery Deluxe | Best Online Lottery in India</title>
+        <title>
+          North East India Lottery | Best Online Lottery in North East India
+        </title>
         <meta
           name="description"
-          content="Play India Lottery and win big with Play India Lottery Deluxe. The best online lottery platform in India. Join now!"
+          content="Play North East India Lottery and win big with the best online lottery platform in North East India. Join now for exciting draws and results!"
         />
         <meta
           name="keywords"
-          content="Play India Lottery, Play India Lottery Deluxe, India lottery, online lottery, win big"
+          content="North East India Lottery, online lottery, North East lottery, win big, lottery results, Assam, Meghalaya, Nagaland, Sikkim, Arunachal, Manipur, Mizoram, Tripura"
         />
       </Helmet>
       <div className="box-container">
         <div className="top-panel">
-          <h1 className="main-heading">Play India Lottery</h1>
+          <h1 className="main-heading">North East India Lottery</h1>
           <p className="sub-heading">Daily Result Chart</p>
           <p className="info">
             CONTACT FOR RESULT SMS & CUSTOMER CARE: {phNumber}

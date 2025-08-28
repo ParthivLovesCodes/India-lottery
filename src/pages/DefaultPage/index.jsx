@@ -6,6 +6,7 @@ import { useLoading } from "../../context/LoadingContext";
 import "./index.scss";
 import playIcon from "../../assets/images/play.png";
 import lotteryHeader from "../../assets/images/lotteryHeader.png";
+import { Helmet } from "react-helmet-async";
 
 const DefaultPage = () => {
   const { getSettingsById, getResultByDateTime } = useData();
@@ -222,6 +223,19 @@ const DefaultPage = () => {
 
   return (
     <div className="default-page">
+      <Helmet>
+        <title>
+          North East India Lottery | Best Online Lottery in North East India
+        </title>
+        <meta
+          name="description"
+          content="Play North East India Lottery and win big with the best online lottery platform in North East India. Join now for exciting draws and results!"
+        />
+        <meta
+          name="keywords"
+          content="North East India Lottery, online lottery, North East lottery, win big, lottery results, Assam, Meghalaya, Nagaland, Sikkim, Arunachal, Manipur, Mizoram, Tripura"
+        />
+      </Helmet>
       <div className="content-container">
         <img
           src={lotteryHeader}
@@ -684,7 +698,14 @@ const DefaultPage = () => {
           <span>
             Purchase of lottery using this website is strictly prohibited in the
             states where lotteries are banned. You must be above 18 years to
-            play Online Lottery. ©playindialottery.com all rights reserved.
+            play Online Lottery.{" "}
+            <a
+              href="https://www.northeastindialottery.com"
+              target="_blank"
+            >
+              ©northeastindialottery.com
+            </a>{" "}
+            all rights reserved.
           </span>
         </div>
       </div>

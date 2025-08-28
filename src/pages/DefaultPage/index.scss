@@ -252,13 +252,14 @@
 
 @media screen and (max-width: 768px) {
   .default-page {
-    padding: 15px;
+    padding: 5px;
     .ticker-content {
       font-size: 18px;
     }
     .time-panel {
       width: auto;
       padding: 2px 5px;
+      border-radius: 2px;
     }
     .panel-label {
       font-size: 8px;
@@ -283,11 +284,12 @@
         }
       }
       input {
-        max-width: 4px;
-        height: 8px;
+        border-radius: 2px;
+        max-width: 6px;
+        height: 4px;
       }
       input.large-input {
-        max-width: 10px;
+        max-width: 18px;
         font-size: 6px;
       }
       .left-b {
@@ -302,22 +304,25 @@
         font-size: 8px;
       }
       input {
-        border-radius: 5px;
-        width: 20px;
-        height: 10px;
+        border-radius: 2px;
+        width: 30px;
+        height: 8px;
+      }
+      .button {
+        display: flex;
       }
       .button input {
         width: auto;
         border-radius: 0;
         padding: 2px 5px;
         font-size: 8px;
-        height: 20px;
+        height: 18px;
       }
       .loginn.total {
         margin-left: 10px;
       }
       .total input {
-        width: 10px;
+        width: 14px;
         font-size: 8px;
       }
     }
@@ -337,7 +342,7 @@
         font-size: 6px;
         font-weight: bold;
         background: #faa70b;
-        border-radius: 5px;
+        border-radius: 2px;
         padding: 2px 5px;
         cursor: pointer;
       }
