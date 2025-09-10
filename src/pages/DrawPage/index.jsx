@@ -70,6 +70,7 @@ const DrawPage = () => {
 
   return (
     <div className="draw-page">
+    <div className="live-text">Live</div>
       <div className="draws">
         <div className="draw-container">
           <div className="draw-title">{ticketName1 || "SANGAM"}</div>

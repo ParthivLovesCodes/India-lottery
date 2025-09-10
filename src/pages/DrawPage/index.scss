@@ -7,6 +7,15 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
+  .live-text {
+    text-align: center;
+    font-size: 44px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 20px;
+  }
   .draws {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
