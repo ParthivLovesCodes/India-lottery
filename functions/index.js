@@ -1,6 +1,7 @@
 import { initializeApp, applicationDefault } from "firebase-admin/app";
 import { getFirestore, Timestamp } from "firebase-admin/firestore";
-import functions from "firebase-functions";
+import * as functions from "firebase-functions";
+
 import moment from "moment-timezone";
 
 initializeApp({
@@ -12,12 +13,12 @@ const db = getFirestore();
 const timeZone = "Asia/Kolkata";
 
 export const scheduledFunction = functions.pubsub
-  .schedule("1,16,31,46 * * * *")
+  .schedule("3,18,33,48 * * * *")
   .timeZone(timeZone)
   .onRun(async (context) => {
     const now = moment().tz(timeZone);
 
-    const oneMinuteBefore = now.clone().subtract(1, "minute");
+    const oneMinuteBefore = now.clone().subtract(3, "minute");
     const formattedDate = oneMinuteBefore.format("DD-MM-YYYY");
     const formattedTime = oneMinuteBefore.format("hh:mm A");
 

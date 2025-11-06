@@ -30,9 +30,9 @@ const DefaultPage = () => {
       const now = new Date();
       const minutes = now.getMinutes();
       const seconds = now.getSeconds();
-      // Define draw windows: [1-2), [16-17), [31-32), [46-47)
+      // Define draw windows: [3-4), [19-20), [33-34), [48-49)
       // Accept only within the first 30 seconds of the draw minute
-      const drawWindows = [1, 16, 31, 46];
+      const drawWindows = [3, 19, 33, 48];
       for (let i = 0; i < drawWindows.length; i++) {
         if (minutes === drawWindows[i] && seconds <= 30) {
           // Only redirect if not already on /draw
@@ -134,7 +134,7 @@ const DefaultPage = () => {
         const result = await getSettingsById(settingsId);
         // 2. Setup real-time clock
         const [timeNext, lastTime] = calculateNextDraw(
-          new Date(Date.now() - 60000)
+          new Date(Date.now() - 180000)
         );
         setNextDrawTime(formatTime(timeNext, false));
 
@@ -161,7 +161,7 @@ const DefaultPage = () => {
         }
 
         interval = setInterval(() => {
-          const now = new Date(Date.now() - 60000);
+          const now = new Date(Date.now() - 180000);
           setCurrentTime(now);
 
           if (timeNext > now) {
