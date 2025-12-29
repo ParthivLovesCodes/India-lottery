@@ -49,9 +49,22 @@ export const scheduledFunction = functions.pubsub
         );
         const docData = firstDoc.data();
         if (docData && docData.declared === false) {
-          const randomNumbers = Array.from({ length: 6 }, () =>
-            Math.floor(Math.random() * 100)
-          );
+          const masterSettingsRef = db
+            .collection("masterSettings")
+            .doc("masterSettings");
+
+          const avoidNumbersList =
+            (await masterSettingsRef.get()).data().blockNumber || [];
+          console.log("Blocked Num:", avoidNumbersList);
+          const randomNumbers = [];
+
+          while (randomNumbers.length < 6) {
+            const num = Math.floor(Math.random() * 100);
+
+            if (!avoidNumbersList.includes(num)) {
+              randomNumbers.push(num);
+            }
+          }
 
           const updateData = {
             "1_": randomNumbers[0].toString().padStart(2, "0"),
@@ -66,9 +79,6 @@ export const scheduledFunction = functions.pubsub
           await firstDoc.ref.update(updateData);
           console.log(`Document updated with:`, updateData);
           // After updating the result, update masterSettings/masterSettings with lastDrawnDate and lastDrawnId
-          const masterSettingsRef = db
-            .collection("masterSettings")
-            .doc("masterSettings");
           await masterSettingsRef.update({
             lastDrawnDate: formattedDate,
             lastDrawnId: firstDoc.id,

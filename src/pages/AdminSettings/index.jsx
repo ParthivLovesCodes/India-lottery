@@ -4,13 +4,14 @@ import { AdminNavbar } from "../../components";
 import { toast, ToastContainer } from "react-toastify";
 import { useData } from "../../context/DataContext";
 import { useLoading } from "../../context/LoadingContext";
-import { Input } from "antd";
+import { Input, InputNumber, Select } from "antd";
 import "./index.scss";
 
 const AdminSettings = () => {
   const { getSettingsById, updateSettingsById } = useData();
   const { showLoading, hideLoading } = useLoading();
   const [phNumber, setPhNumber] = useState("");
+  const [blockNumbers, setBlockNumbers] = useState([]);
   const [ticketName1, setTicketName1] = useState("");
   const [ticketName2, setTicketName2] = useState("");
   const [ticketName3, setTicketName3] = useState("");
@@ -27,6 +28,7 @@ const AdminSettings = () => {
 
         if (result.success) {
           setPhNumber(result.data.phoneNumber);
+          setBlockNumbers(result.data.blockNumber);
           setTicketName1(result.data.ticketName1);
           setTicketName2(result.data.ticketName2);
           setTicketName3(result.data.ticketName3);
@@ -46,6 +48,18 @@ const AdminSettings = () => {
 
     fetchSettings();
   }, []);
+
+  const options = [];
+  for (let i = 0; i < 100; i++) {
+    options.push({
+      label: i,
+      value: i,
+    });
+  }
+
+  const handleBlockChange = (value) => {
+    setBlockNumbers(value);
+  };
 
   const updateHandler = async () => {
     const tickName1 = ticketName1.trim();
@@ -75,10 +89,11 @@ const AdminSettings = () => {
         phoneNumber: phNumber,
         ticketName1: tickName1,
         ticketName2: tickName2,
-        ticketName3: tickName3, 
+        ticketName3: tickName3,
         ticketName4: tickName4,
         ticketName5: tickName5,
         ticketName6: tickName6,
+        blockNumber: [...blockNumbers],
       });
       toast.success("Settings Updated Succesfully!");
     } catch (error) {
@@ -157,6 +172,17 @@ const AdminSettings = () => {
                   maxLength={10}
                   value={phNumber}
                   onChange={(e) => setPhNumber(e.target.value)}
+                />
+              </div>
+              <div className="field-container">
+                <span className="field-title">Blocked Numbers</span>
+                <Select
+                  mode="multiple"
+                  style={{ width: "100%" }}
+                  placeholder="Please select"
+                  value={[...blockNumbers]}
+                  onChange={handleBlockChange}
+                  options={options}
                 />
               </div>
             </div>
